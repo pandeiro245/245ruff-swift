@@ -9,30 +9,35 @@
 import UIKit
 
 class HomeViewController: UIViewController {
-
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
         let textView = UITextView(frame: self.view.bounds)
         self.view.addSubview(textView)
+        
+        AppConfiguration.sharedConfiguration.setCurrentUser(nil)
     }
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         
+        /*
         SVProgressHUD.show()
-        let when = dispatch_time(DISPATCH_TIME_NOW, Int64(3.0 * Double(NSEC_PER_SEC)))
+        let when = dispatch_time(DISPATCH_TIME_NOW, Int64(10.0 * Double(NSEC_PER_SEC)))
         dispatch_after(when, dispatch_get_main_queue(), {
-            SVProgressHUD.dismiss()
+        SVProgressHUD.dismiss()
         })
+        */
+        
+        if !AppConfiguration.sharedConfiguration.userSignedIn() {
+            let signInController = SignInViewController()
+            let navController = UINavigationController(rootViewController: signInController);
+            self.presentViewController(navController, animated: true, completion: nil)
+        } else {
+            println("\(AppConfiguration.sharedConfiguration.currentUser().username)")
+        }
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
 
     /*
     // MARK: - Navigation

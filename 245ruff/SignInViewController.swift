@@ -9,6 +9,7 @@
 import UIKit
 
 class SignInViewController: FXFormViewController {
+    
     override init() {
         super.init()
         
@@ -17,6 +18,14 @@ class SignInViewController: FXFormViewController {
         
         let cancelItem = UIBarButtonItem(barButtonSystemItem: .Cancel, target: self, action: "cancelItemDidTap:")
         self.navigationItem.leftBarButtonItem = cancelItem
+    }
+    
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+    }
+    
+    required init(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
     
     func signInDidTap() {

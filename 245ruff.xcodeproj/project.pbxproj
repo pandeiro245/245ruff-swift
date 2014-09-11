@@ -10,6 +10,8 @@
 		30D1B5742CB24772963762E7 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C96C61D5FA61413193EACB43 /* libPods.a */; };
 		D035A15419BEDAC800DE0F46 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = D035A15319BEDAC800DE0F46 /* User.swift */; };
 		D039B5C519BF2F64008D7830 /* AppConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = D039B5C419BF2F64008D7830 /* AppConfiguration.swift */; };
+		D0793A9E19C17AB200375BCF /* AppSecret.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0793A9D19C17AB200375BCF /* AppSecret.swift */; };
+		D0793AA019C17C0700375BCF /* RuffnoteAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0793A9F19C17C0700375BCF /* RuffnoteAPIClient.swift */; };
 		D09727EE19B6EBBF008A03BA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D09727ED19B6EBBF008A03BA /* AppDelegate.swift */; };
 		D09727F519B6EBC0008A03BA /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D09727F419B6EBC0008A03BA /* Images.xcassets */; };
 		D097280119B6EBC0008A03BA /* _45ruffTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D097280019B6EBC0008A03BA /* _45ruffTests.swift */; };
@@ -33,6 +35,8 @@
 		C96C61D5FA61413193EACB43 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		D035A15319BEDAC800DE0F46 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		D039B5C419BF2F64008D7830 /* AppConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppConfiguration.swift; sourceTree = "<group>"; };
+		D0793A9D19C17AB200375BCF /* AppSecret.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppSecret.swift; sourceTree = "<group>"; };
+		D0793A9F19C17C0700375BCF /* RuffnoteAPIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RuffnoteAPIClient.swift; sourceTree = "<group>"; };
 		D09727E819B6EBBF008A03BA /* 245ruff.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 245ruff.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D09727EC19B6EBBF008A03BA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D09727ED19B6EBBF008A03BA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -105,6 +109,8 @@
 				D035A15319BEDAC800DE0F46 /* User.swift */,
 				D039B5C419BF2F64008D7830 /* AppConfiguration.swift */,
 				D0A61EDB19BD6F0900C3ED2B /* 245ruff-Bridging-Header.h */,
+				D0793A9F19C17C0700375BCF /* RuffnoteAPIClient.swift */,
+				D0793A9D19C17AB200375BCF /* AppSecret.swift */,
 			);
 			path = 245ruff;
 			sourceTree = "<group>";
@@ -271,8 +277,10 @@
 				D0A61EE219BEACF600C3ED2B /* SignInViewController.swift in Sources */,
 				D09727EE19B6EBBF008A03BA /* AppDelegate.swift in Sources */,
 				D0E99DD119B85D2E00FBC026 /* HomeViewController.swift in Sources */,
+				D0793AA019C17C0700375BCF /* RuffnoteAPIClient.swift in Sources */,
 				D035A15419BEDAC800DE0F46 /* User.swift in Sources */,
 				D0A61EE019BEAC9300C3ED2B /* SignInForm.swift in Sources */,
+				D0793A9E19C17AB200375BCF /* AppSecret.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

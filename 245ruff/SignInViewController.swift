@@ -27,17 +27,36 @@ class SignInViewController: FXFormViewController {
     required init(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+
     func signInDidTap() {
         let form = self.formController.form as SignInForm;
         
-        if form.login != nil {
-            let user = User(username: form.login)
-            AppConfiguration.sharedConfiguration.setCurrentUser(user)
-            self.close()
+        if form.login != nil && form.password != nil {
+            SVProgressHUD.show()
+            RuffnoteAPIClient.sharedClient.signIn(
+                login: form.login,
+                password: form.password,
+                success: { (accessToken: String) in
+                    let user = User(username: form.login, accessToken: accessToken)
+                    AppConfiguration.sharedConfiguration.setCurrentUser(user)
+                    SVProgressHUD.dismiss()
+                    self.close()
+                },
+                failure: { (message: String) in
+                    let alertController = UIAlertController(
+                        title: NSLocalizedString("Error", comment: ""),
+                        message: message,
+                        preferredStyle: .Alert)
+                    alertController.addAction(UIAlertAction(
+                        title: NSLocalizedString("OK", comment: ""),
+                        style: .Default,
+                        handler: nil))
+                    self.presentViewController(alertController, animated: true, completion: nil)
+                    SVProgressHUD.dismiss()
+            })
         }
     }
-    
+
     func cancelItemDidTap(sender: AnyObject!) {
         self.close()
     }

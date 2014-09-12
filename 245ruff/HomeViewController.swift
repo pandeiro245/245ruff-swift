@@ -24,10 +24,24 @@ class HomeViewController: UIViewController {
         
         if AppConfiguration.sharedConfiguration.userSignedIn() {
             SVProgressHUD.show()
+            
+            /*
             RuffnoteAPIClient.sharedClient.me(
                 accessToken: AppConfiguration.sharedConfiguration.currentUser().accessToken,
                 success: { (response: [String : AnyObject]) in
                     println(response)
+                    SVProgressHUD.dismiss()
+                },
+                failure: { (message: String) in
+                    println(message)
+                    SVProgressHUD.dismiss()
+            })
+            */
+            
+            RuffnoteAPIClient.sharedClient.notes(
+                accessToken: AppConfiguration.sharedConfiguration.currentUser().accessToken,
+                success: { (notes: [Note]) in
+                    println(notes.map { (n) in n.label })
                     SVProgressHUD.dismiss()
                 },
                 failure: { (message: String) in

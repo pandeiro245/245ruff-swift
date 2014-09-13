@@ -10,6 +10,8 @@ import UIKit
 
 class HomeViewController: UIViewController {
     
+    var titleButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         

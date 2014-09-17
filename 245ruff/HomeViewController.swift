@@ -30,21 +30,19 @@ class HomeViewController: UIViewController {
     }
     
     override func viewWillAppear(animated: Bool) {
-        super.viewDidAppear(animated)
+        super.viewWillAppear(animated)
         
         let notificationCenter = NSNotificationCenter.defaultCenter()
         notificationCenter.addObserver(self, selector: "handleKeyboardWillShowNotification:", name: UIKeyboardWillShowNotification, object: nil)
-        notificationCenter.addObserver(self, selector: "handleKeyboardWillHideNotification:", name: UIKeyboardWillShowNotification, object: nil)
-        
+        notificationCenter.addObserver(self, selector: "handleKeyboardWillHideNotification:", name: UIKeyboardWillHideNotification, object: nil)
     }
     
     override func viewWillDisappear(animated: Bool) {
         super.viewWillDisappear(animated)
         
         let notificationCenter = NSNotificationCenter.defaultCenter()
-        notificationCenter.removeObserver(self, name:UIKeyboardWillShowNotification, object:nil)
-        notificationCenter.removeObserver(self, name:UIKeyboardWillHideNotification, object:nil)
-        
+        notificationCenter.removeObserver(self, name: UIKeyboardWillShowNotification, object: nil)
+        notificationCenter.removeObserver(self, name: UIKeyboardWillHideNotification, object: nil)
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -57,8 +55,13 @@ class HomeViewController: UIViewController {
             let navController = UINavigationController(rootViewController: signInController)
             self.presentViewController(navController, animated: true, completion: nil)
         }
-    
+        
         self.textView.becomeFirstResponder()
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
     }
     
     func titleButtonDidTap(sender: AnyObject) {
@@ -80,6 +83,7 @@ class HomeViewController: UIViewController {
         let note = AppConfiguration.sharedConfiguration.currentNote()!
         let joiner = note.format == "html" ? "<br>" : "\n"
         let content = joiner.join(lines).stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet())
+        
         let page = Page(title: title, content: content, note: note)
         RuffnoteAPIClient.sharedClient.createPage(
             accessToken: AppConfiguration.sharedConfiguration.currentUser().accessToken,
@@ -92,28 +96,28 @@ class HomeViewController: UIViewController {
                 let alertController = UIAlertController(
                     title: NSLocalizedString("Error", comment: ""),
                     message: message,
-                    preferredStyle: .Alert
-                )
+                    preferredStyle: .Alert)
                 alertController.addAction(UIAlertAction(
                     title: NSLocalizedString("OK", comment: ""),
                     style: .Default,
-                    handler: nil
-                ))
-            }
-        )
+                    handler: nil))
+                self.presentViewController(alertController, animated: true, completion: nil)
+                SVProgressHUD.dismiss()
+        })
     }
     
     // MARK: Keyboard
     
     func handleKeyboardWillShowNotification(notification: NSNotification) {
-        keyboardWillChangeFrameWithNotification(notification, showKeyboard: true)
+        keyboardWillChangeFrameWithNotification(notification, showsKeyboard: true)
     }
     
     func handleKeyboardWillHideNotification(notification: NSNotification) {
-        keyboardWillChangeFrameWithNotification(notification, showKeyboard: false)
+        keyboardWillChangeFrameWithNotification(notification, showsKeyboard: false)
+        
     }
     
-    func keyboardWillChangeFrameWithNotification(notification: NSNotification, showKeyboard: Bool) {
+    func keyboardWillChangeFrameWithNotification(notification: NSNotification, showsKeyboard: Bool) {
         let userInfo = notification.userInfo!
         
         let animationDuration: NSTimeInterval = (userInfo[UIKeyboardAnimationDurationUserInfoKey] as NSNumber).doubleValue
@@ -127,7 +131,7 @@ class HomeViewController: UIViewController {
         
         UIView.animateWithDuration(animationDuration, delay: 0, options: UIViewAnimationOptions.BeginFromCurrentState, animations: {
             self.textView.frame.size.height += originDelta
-        }, completion: nil)
+            }, completion: nil)
         
         let selectedRange = textView.selectedRange
         textView.scrollRangeToVisible(selectedRange)

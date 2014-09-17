@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		30D1B5742CB24772963762E7 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C96C61D5FA61413193EACB43 /* libPods.a */; };
+		D00C8A8919C94D3300CF6DB3 /* Page.swift in Sources */ = {isa = PBXBuildFile; fileRef = D00C8A8819C94D3300CF6DB3 /* Page.swift */; };
 		D035A15419BEDAC800DE0F46 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = D035A15319BEDAC800DE0F46 /* User.swift */; };
 		D039B5C519BF2F64008D7830 /* AppConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = D039B5C419BF2F64008D7830 /* AppConfiguration.swift */; };
 		D06D12BD19C3331C003CB136 /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = D06D12BC19C3331C003CB136 /* Note.swift */; };
@@ -36,6 +37,7 @@
 /* Begin PBXFileReference section */
 		5605EB13678B458FA32B7593 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		C96C61D5FA61413193EACB43 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		D00C8A8819C94D3300CF6DB3 /* Page.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Page.swift; sourceTree = "<group>"; };
 		D035A15319BEDAC800DE0F46 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		D039B5C419BF2F64008D7830 /* AppConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppConfiguration.swift; sourceTree = "<group>"; };
 		D06D12BC19C3331C003CB136 /* Note.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
@@ -113,6 +115,7 @@
 				D06D12C019C3D7F2003CB136 /* SelectNoteViewController.swift */,
 				D0A61EDF19BEAC9300C3ED2B /* SignInForm.swift */,
 				D06D12BC19C3331C003CB136 /* Note.swift */,
+				D00C8A8819C94D3300CF6DB3 /* Page.swift */,
 				D06D12BE19C33334003CB136 /* Team.swift */,
 				D0A61EE119BEACF600C3ED2B /* SignInViewController.swift */,
 				D035A15319BEDAC800DE0F46 /* User.swift */,
@@ -284,6 +287,7 @@
 			files = (
 				D06D12C119C3D7F2003CB136 /* SelectNoteViewController.swift in Sources */,
 				D039B5C519BF2F64008D7830 /* AppConfiguration.swift in Sources */,
+				D00C8A8919C94D3300CF6DB3 /* Page.swift in Sources */,
 				D0A61EE219BEACF600C3ED2B /* SignInViewController.swift in Sources */,
 				D09727EE19B6EBBF008A03BA /* AppDelegate.swift in Sources */,
 				D0E99DD119B85D2E00FBC026 /* HomeViewController.swift in Sources */,

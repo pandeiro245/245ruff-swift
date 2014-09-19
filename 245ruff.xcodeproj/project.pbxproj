@@ -21,6 +21,8 @@
 		D097280119B6EBC0008A03BA /* _45ruffTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D097280019B6EBC0008A03BA /* _45ruffTests.swift */; };
 		D0A61EE019BEAC9300C3ED2B /* SignInForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A61EDF19BEAC9300C3ED2B /* SignInForm.swift */; };
 		D0A61EE219BEACF600C3ED2B /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A61EE119BEACF600C3ED2B /* SignInViewController.swift */; };
+		D0B70B8219C9749800056362 /* NewNoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0B70B8119C9749800056362 /* NewNoteViewController.swift */; };
+		D0B70B8419C981A300056362 /* NoteForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0B70B8319C981A300056362 /* NoteForm.swift */; };
 		D0E99DD119B85D2E00FBC026 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0E99DD019B85D2E00FBC026 /* HomeViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -55,6 +57,8 @@
 		D0A61EDB19BD6F0900C3ED2B /* 245ruff-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "245ruff-Bridging-Header.h"; sourceTree = "<group>"; };
 		D0A61EDF19BEAC9300C3ED2B /* SignInForm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInForm.swift; sourceTree = "<group>"; };
 		D0A61EE119BEACF600C3ED2B /* SignInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
+		D0B70B8119C9749800056362 /* NewNoteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewNoteViewController.swift; sourceTree = "<group>"; };
+		D0B70B8319C981A300056362 /* NoteForm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoteForm.swift; sourceTree = "<group>"; };
 		D0E99DD019B85D2E00FBC026 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -112,6 +116,8 @@
 				D09727F419B6EBC0008A03BA /* Images.xcassets */,
 				D09727EB19B6EBBF008A03BA /* Supporting Files */,
 				D0E99DD019B85D2E00FBC026 /* HomeViewController.swift */,
+				D0B70B8119C9749800056362 /* NewNoteViewController.swift */,
+				D0B70B8319C981A300056362 /* NoteForm.swift */,
 				D06D12C019C3D7F2003CB136 /* SelectNoteViewController.swift */,
 				D0A61EDF19BEAC9300C3ED2B /* SignInForm.swift */,
 				D06D12BC19C3331C003CB136 /* Note.swift */,
@@ -288,6 +294,7 @@
 				D06D12C119C3D7F2003CB136 /* SelectNoteViewController.swift in Sources */,
 				D039B5C519BF2F64008D7830 /* AppConfiguration.swift in Sources */,
 				D00C8A8919C94D3300CF6DB3 /* Page.swift in Sources */,
+				D0B70B8219C9749800056362 /* NewNoteViewController.swift in Sources */,
 				D0A61EE219BEACF600C3ED2B /* SignInViewController.swift in Sources */,
 				D09727EE19B6EBBF008A03BA /* AppDelegate.swift in Sources */,
 				D0E99DD119B85D2E00FBC026 /* HomeViewController.swift in Sources */,
@@ -295,6 +302,7 @@
 				D06D12BD19C3331C003CB136 /* Note.swift in Sources */,
 				D035A15419BEDAC800DE0F46 /* User.swift in Sources */,
 				D0A61EE019BEAC9300C3ED2B /* SignInForm.swift in Sources */,
+				D0B70B8419C981A300056362 /* NoteForm.swift in Sources */,
 				D06D12BF19C33334003CB136 /* Team.swift in Sources */,
 				D0793A9E19C17AB200375BCF /* AppSecret.swift in Sources */,
 			);

@@ -14,10 +14,9 @@ public class RuffnoteAPIClient: NSObject {
     let version = "/api/v1"
     
     public class var sharedClient: RuffnoteAPIClient {
-    struct Singleton {
-        static let sharedClient = RuffnoteAPIClient()
+        struct Singleton {
+            static let sharedClient = RuffnoteAPIClient()
         }
-        
         return Singleton.sharedClient
     }
     
@@ -97,6 +96,30 @@ public class RuffnoteAPIClient: NSObject {
             parameters: params,
             success: { (operation: AFHTTPRequestOperation!, responseObject: AnyObject!) in
                 success()
+            },
+            failure: { (operation: AFHTTPRequestOperation!, error: NSError!) in
+                failure(error.localizedDescription)
+            }
+        )
+    }
+    
+    func createNote(#accessToken: String, note: Note, success: Note -> (), failure: String -> ()) {
+        let manager = authorizedManager(accessToken)
+        var params = [
+            "note" : [
+                "title" : note.title,
+                "is_private" : note.isPrivate,
+                "format" : note.format,
+                "team" : note.team.name
+            ]
+        ]
+        
+        manager.POST(
+            "\(site)\(version)\notes",
+            parameters: params,
+            success: { (operation: AFHTTPRequestOperation!, responseObject: AnyObject!) in
+                let note = Note(attributes: responseObject as NSDictionary)
+                success(note)
             },
             failure: { (operation: AFHTTPRequestOperation!, error: NSError!) in
                 failure(error.localizedDescription)

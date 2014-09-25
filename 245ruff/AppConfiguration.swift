@@ -15,10 +15,9 @@ public class AppConfiguration: NSObject {
     }
     
     public class var sharedConfiguration: AppConfiguration {
-    struct Singleton {
-        static let sharedAppConfiguration = AppConfiguration()
+        struct Singleton {
+            static let sharedAppConfiguration = AppConfiguration()
         }
-        
         return Singleton.sharedAppConfiguration
     }
     

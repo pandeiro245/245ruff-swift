@@ -68,7 +68,11 @@ public class RuffnoteAPIClient: NSObject {
         let manager = authorizedManager(accessToken)
         manager.GET(
             "\(site)\(version)/notes",
-            parameters: nil,
+            //"\(site)\(version)/teams/pandeiro245/notes",
+            //"\(site)\(version)/me?team=pandeiro245&type=private",
+            //parameters: ["team" : "pandeiro245", "type" : "private"],
+            //parameters: ["type" : "private"],
+            parameters: ["type" : "fork"],
             success: { (operation: AFHTTPRequestOperation!, responseObject: AnyObject!) in
                 var notes = [Note]()
                 for attributes : NSDictionary in responseObject as Array {
@@ -87,7 +91,8 @@ public class RuffnoteAPIClient: NSObject {
         var params = [
             "page" : [
                 "title" : page.title,
-                "content" : page.content
+                "content" : page.content,
+                "parent" : 16161 // nishiko original
             ]
         ]
         
